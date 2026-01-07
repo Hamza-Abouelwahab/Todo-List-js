@@ -12,6 +12,10 @@ body{
     height: fit-content;
     color: rgb(255, 255, 255);
 }
+.parentDiv{
+    box-shadow: 5px 5px 15px hsla(0, 0%, 0%, 0.1);
+    width: 50vw;
+}
 .inputDiv{
     display: flex;
     justify-content: center;
@@ -42,8 +46,19 @@ top: -60px;
 }
 .list-of-users{
     border-bottom: 1px solid #d1d6d0;
-    padding: 2vw 0;
+    padding: 1vw 0;
     list-style: none;
     padding-left: 2vw;
+    /* background-color: red; */
+    display: flex;
+    padding-inline: 3vw;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4vw;
     
+}
+.divIcons{
+    display: flex; 
+
+    gap: 2vw;
 }
