@@ -13,7 +13,7 @@ taskInput.addEventListener("change" ,() => {
 })
 taskInput.addEventListener("input" , ()=> {
     document.getElementById("error-ofinput").remove()
-    
+    errors = null
 })
 
 taskBtn.addEventListener("click" , () => {
@@ -40,7 +40,8 @@ taskBtn.addEventListener("click" , () => {
 
         const listOfUsers = document.createElement("li")
         divOfList.setAttribute("class" , "list-of-users")
-        
+        listOfUsers.style.width = "70%"
+
         listOfUsers.textContent = inputResult 
         
         const divIcons = document.createElement("div")
@@ -49,8 +50,8 @@ taskBtn.addEventListener("click" , () => {
         const update = document.createElement("span")
         update.innerHTML = `<i class="bi bi-pencil"></i>`
 
-        const verrif = document.createElement("span")
-        verrif.innerHTML = `<i class="bi bi-check-lg"></i>`
+        const check = document.createElement("span")
+        check.innerHTML = `<i class="bi bi-check-lg"></i>`
 
         const deletLi = document.createElement("span")
         deletLi.innerHTML = `<i class="bi bi-trash3"></i>`
@@ -59,7 +60,7 @@ taskBtn.addEventListener("click" , () => {
         divOfList.appendChild(listOfUsers)
         divOfList.appendChild(divIcons)
         divIcons.appendChild(update)
-        divIcons.appendChild(verrif)
+        divIcons.appendChild(check)
         divIcons.appendChild(deletLi)
         
         taskInput.value = ""
@@ -75,8 +76,24 @@ taskBtn.addEventListener("click" , () => {
         deletLi.addEventListener("click" , () => {
             divOfList.remove()
         })
+        check.addEventListener("click", () => {
+            
+            if (divOfList.classList.contains("ok")) {
+                divOfList.style.backgroundColor = "transparent"
+                divOfList.style.color = "white"
+                divOfList.style.textDecoration = "none"
+                divOfList.style.borderBottom = "2px #00c8ff solid"
 
-        
+                divOfList.classList.remove("ok")
+            }else{
+                divOfList.style.backgroundColor = "#00c8ff"
+                divOfList.style.color = "black"
+                divOfList.style.textDecoration = "line-through"
+                divOfList.style.borderBottom = "black 2px solid"
+
+                divOfList.classList.add("ok")
+            }
+})
     }
 })
 
