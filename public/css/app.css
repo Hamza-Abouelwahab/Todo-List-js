@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    background-image: linear-gradient(to left, #667eea, #764ba2);
+    height: fit-content;
+    color: rgb(255, 255, 255);
+}
+.inputDiv{
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    margin: 2vw 0;
+}
+#task-input{
+    border: 1.5px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 1vh 2vw;
+    background-color: transparent;
+    
+}
+#task-btn{
+    background-color: transparent;
+    padding: 1vh 1vw ;
+    border: 1.4px solid ;
+    border-radius: 50%;
+    color: #ffffff;
+}
+.divOf-list{
+    position: relative;
+}
+#error-ofinput{
+background-color: black;
+position: absolute;
+top: -60px;
+}
+.list-of-users{
+    border-bottom: 1px solid #d1d6d0;
+    padding: 2vw 0;
+    list-style: none;
+    padding-left: 2vw;
+    
+}
