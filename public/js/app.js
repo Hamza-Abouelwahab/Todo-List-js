@@ -72,10 +72,12 @@ taskBtn.addEventListener("click" , () => {
             taskBtn.textContent = "Update"
             taskInput.focus()
         })
-
+        deletLi.addEventListener("click" , () => {
+            divOfList.remove()
+        })
 
         
     }
 })
-// * githuuuuuuuuuuuuuuuuuuuuuuuub .
+
 
