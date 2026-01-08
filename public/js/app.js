@@ -1,12 +1,26 @@
 let body = document.body
-let inputResult = null
 let pushList = document.querySelector(".users")
 let divOfUl = document.querySelector(".divOf-list")
 const taskInput = document.querySelector("#task-input")
 const taskBtn = document.querySelector("#task-btn")
+let inputResult = null
 let errors 
 let currentEditingTask = null
 
+taskInput.addEventListener( "mouseover" , () => {
+        taskInput.style.border = "solid 2px #155060"
+})
+taskInput.addEventListener( "mouseout" , () => {
+        taskInput.style.border = "solid 2px #ffffffff"
+})
+taskBtn.addEventListener("mouseover", () =>{
+        taskBtn.style.backgroundColor = "#00c8ff"
+        taskBtn.style.border = "#00c8ff none"
+} ) 
+taskBtn.addEventListener("mouseout", () =>{
+        taskBtn.style.backgroundColor = "#155060"
+        taskBtn.style.border = "#155060 none"
+} ) 
 taskInput.addEventListener("change" ,() => {
     inputResult = taskInput.value.trim()
 
@@ -36,11 +50,13 @@ taskBtn.addEventListener("click" , () => {
         taskBtn.textContent = "Add"
     }
     else{
+        
         const divOfList = document.createElement("div")
 
         const listOfUsers = document.createElement("li")
         divOfList.setAttribute("class" , "list-of-users")
         listOfUsers.style.width = "70%"
+        listOfUsers.style.wordBreak = "break-word"
 
         listOfUsers.textContent = inputResult 
         
@@ -66,7 +82,7 @@ taskBtn.addEventListener("click" , () => {
         taskInput.value = ""
         inputResult = null
 
-        update.addEventListener("click" ,()=>{
+        update.addEventListener("click" ,()=> {
             taskInput.value = listOfUsers.textContent
             inputResult = listOfUsers.textContent
             currentEditingTask = listOfUsers
