@@ -48,7 +48,7 @@ taskBtn.addEventListener("click" , () => {
         divIcons.setAttribute("class" , "divIcons")
 
         const update = document.createElement("span")
-        update.innerHTML = `<i class="bi bi-pencil"></i>`
+        update.innerHTML = `<i class="bi bi-pencil"></i>`  
 
         const check = document.createElement("span")
         check.innerHTML = `<i class="bi bi-check-lg"></i>`
